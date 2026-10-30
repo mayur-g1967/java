@@ -1,0 +1,50 @@
+interface AdministrativeDuties {
+    void manageSchedule();
+    void fillReports();
+}
+
+interface MedicalDuties {
+    void diagnosePatient();
+    void prescribeMedicine();
+}
+
+class DoctorAdministrator implements AdministrativeDuties, MedicalDuties {
+    String name;
+    int doctorId;
+
+    DoctorAdministrator(String name, int doctorId) {
+        this.name = name;
+        this.doctorId = doctorId;
+    }
+
+    public void manageSchedule() {
+        System.out.println("Managing the doctors' and appointments schedule.");
+    }
+
+    public void fillReports() {
+        System.out.println("Filling the hospital administrative reports.");
+    }
+
+    public void diagnosePatient() {
+        System.out.println("Diagnosing the patient's condition.");
+    }
+
+    public void prescribeMedicine() {
+        System.out.println("Prescribing medicine to the patient.");
+    }
+
+    void showDetails() {
+        System.out.println("Doctor Name : " + name);
+        System.out.println("Doctor ID   : " + doctorId);
+    }
+
+    public static void main(String[] args) {
+        DoctorAdministrator d = new DoctorAdministrator("Dr. Mayur Gangurde", 501);
+
+        d.showDetails();
+        d.manageSchedule();
+        d.fillReports();
+        d.diagnosePatient();
+        d.prescribeMedicine();
+    }
+}
