@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Task Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: lightgray;
+        }
+        header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            width: 300px;
+            height: 150px;
+            border: 4px solid white;
+            border-radius: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+        main {
+            text-align: center;
+            padding: 30px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Task Manager</h1>
+        <img src="banner.jpg" alt="Banner">
+        <nav>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('about')">About</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content"></div>
+    </main>
+
+    <footer>
+        <p>Full Stack Java Project 2026</p>
+    </footer>
+
+    <script>
+        function showPage(page) {
+            var box = document.getElementById("content");
+
+            if (page == "home") {
+                box.innerHTML = "<h2>Welcome</h2><p>Manage your tasks easily.</p><button onclick='showMessage()'>Click Me</button><p id='msg'></p>";
+            } else if (page == "about") {
+                box.innerHTML = "<h2>About</h2><p>This project helps students organise their daily tasks.</p>";
+            } else {
+                box.innerHTML = "<h2>Contact</h2><p>Email: taskmanager@example.com</p>";
+            }
+        }
+
+        function showMessage() {
+            document.getElementById("msg").innerHTML = "Thank you for clicking!";
+        }
+
+        showPage("home");
+    </script>
+</body>
+</html>
