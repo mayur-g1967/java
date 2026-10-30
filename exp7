@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="colorName"></h1>
+
+    <script>
+        var colors = ["lightblue", "lightgreen", "lightpink", "lightyellow", "lightgray"];
+        var index = 0;
+
+        function changeColor() {
+            document.body.style.backgroundColor = colors[index];
+            document.getElementById("colorName").innerHTML = "Current color: " + colors[index];
+            index = (index + 1) % colors.length;
+        }
+
+        changeColor();
+        setInterval(changeColor, 5000);
+    </script>
+</body>
+</html>
