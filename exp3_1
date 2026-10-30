@@ -1,0 +1,73 @@
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayPerson() {
+        System.out.println("Name : " + name);
+        System.out.println("Age  : " + age);
+    }
+}
+
+class Student extends Person {
+    int rollNo;
+
+    Student(String name, int age, int rollNo) {
+        super(name, age);
+        this.rollNo = rollNo;
+    }
+
+    void displayStudent() {
+        displayPerson();
+        System.out.println("Roll No : " + rollNo);
+    }
+}
+
+class Teacher extends Person {
+    String subject;
+
+    Teacher(String name, int age, String subject) {
+        super(name, age);
+        this.subject = subject;
+    }
+
+    void displayTeacher() {
+        displayPerson();
+        System.out.println("Subject : " + subject);
+    }
+}
+
+class ClassRepresentative extends Student {
+    String className;
+
+    ClassRepresentative(String name, int age, int rollNo, String className) {
+        super(name, age, rollNo);
+        this.className = className;
+    }
+
+    void displayRepresentative() {
+        displayStudent();
+        System.out.println("Class : " + className);
+    }
+}
+
+class SchoolDemo {
+    public static void main(String[] args) {
+        Student s = new Student("Mayur Gangurde", 19, 101);
+        Teacher t = new Teacher("Mr. Sharma", 35, "Java");
+        ClassRepresentative cr = new ClassRepresentative("Mayuri Patil", 20, 102, "SE Computer");
+
+        System.out.println("===== Student =====");
+        s.displayStudent();
+
+        System.out.println("===== Teacher =====");
+        t.displayTeacher();
+
+        System.out.println("===== Class Representative =====");
+        cr.displayRepresentative();
+    }
+}
