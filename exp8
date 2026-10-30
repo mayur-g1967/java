@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Animation</title>
+    <style>
+        body {
+            background-color: black;
+            color: lightgreen;
+            font-family: Courier New;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text"></h1>
+
+    <script>
+        var message = "Welcome to Student Task Manager - Full Stack Java Project";
+        var i = 0;
+
+        function typeText() {
+            if (i < message.length) {
+                document.getElementById("text").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        typeText();
+    </script>
+</body>
+</html>
